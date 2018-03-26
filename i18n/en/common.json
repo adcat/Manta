@@ -5,7 +5,11 @@
     "address": "Address",
     "email": "Email",
     "phone": "Phone Number",
-    "website": "Website"
+    "website": "Website",
+    "account": "Account",
+    "bank": "bank",
+    "bankCode": "Bank Code",
+    "iban": "IBAN"
   },
   "save": "Save",
   "amount": "Amount",

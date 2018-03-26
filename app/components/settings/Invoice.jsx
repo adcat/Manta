@@ -11,6 +11,7 @@ import Currency from './_partials/invoice/Currency';
 import Fields from './_partials/invoice/Fields';
 import Other from './_partials/invoice/Other';
 import Tax from './_partials/invoice/Tax';
+import Account from './_partials/invoice/Account';
 
 // Component
 class Invoice extends Component {
@@ -112,6 +113,7 @@ class Invoice extends Component {
       exportDir,
       template,
       currency,
+      account,
       tax,
       required_fields,
       dateFormat,
@@ -121,6 +123,12 @@ class Invoice extends Component {
         key="required_fields_settings"
         required_fields={required_fields}
         handleVisibilityChange={this.handleVisibilityChange}
+        t={t}
+      />,
+      <Account
+        key="account_settings"
+        account={account}
+        onChange={this.handleInputChange}
         t={t}
       />,
       <Tax
