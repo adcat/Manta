@@ -63,7 +63,7 @@ const Heading = styled.h1`
 
 // Component
 function Header({ t, invoice, profile, configs }) {
-  const { tax, recipient } = invoice;
+  const { tax, recipient, account } = invoice;
   const { language, accentColor, customAccentColor  } = configs;
   return (
     <InvoiceHeader>
@@ -75,6 +75,9 @@ function Header({ t, invoice, profile, configs }) {
           <p>{profile.email}</p>
           <p>{profile.phone}</p>
           { tax && <p>Tax ID: { tax.tin }</p> }
+          <p>Bank: Bundesbank</p>
+          <p>Bank Code: 43050001</p>
+          <p>DE 3920 0300 0000 9244 1196</p>
         </Company>
 
         {configs.showRecipient && (

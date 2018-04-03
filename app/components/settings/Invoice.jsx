@@ -22,6 +22,7 @@ class Invoice extends Component {
     this.handleTaxChange = this.handleTaxChange.bind(this);
     this.handleCurrencyChange = this.handleCurrencyChange.bind(this);
     this.handleVisibilityChange = this.handleVisibilityChange.bind(this);
+    this.handleAccountChange = this.handleAccountChange.bind(this);
   }
 
   componentDidMount() {
@@ -107,6 +108,22 @@ class Invoice extends Component {
     ipc.send('select-export-directory');
   }
 
+  handleAccountChange(event) {
+    const target = event.target;
+    const name = event.target.name;
+    const value = event.target.value;
+    this.setState(
+      {
+        account: Object.assign({}, this.state.account, {
+          [name]: value,
+        }),
+      },
+      () => {
+        this.props.updateSettings('invoice', this.state);
+      }
+    );
+  }
+
   render() {
     const { t } = this.props;
     const {
@@ -128,7 +145,7 @@ class Invoice extends Component {
       <Account
         key="account_settings"
         account={account}
-        onChange={this.handleInputChange}
+        handleAccountChange={this.handleAccountChange}
         t={t}
       />,
       <Tax

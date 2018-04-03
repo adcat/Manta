@@ -197,6 +197,11 @@ function setInitialValues() {
       exportDir: os.homedir(),
       template: 'default',
       dateFormat: 'MM/DD/YYYY',
+      account: {
+        bank: 'Bundesbank',
+        bankCode: '43050001',
+        iban: 'DE 3920 0300 0000 9244 1196',
+      },
       tax: {
         tin: '123-456-789',
         method: 'default',
@@ -215,6 +220,7 @@ function setInitialValues() {
         discount: false,
         tax: false,
         note: false,
+        account: false,
       },
     },
   };

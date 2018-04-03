@@ -2,13 +2,12 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
 import { Row, Field, Part } from '../../../shared/Part';
+import styled from 'styled-components';
 
 function Account({
   t,
-  handleInputChange,
-  bank,
-  bankCode,
-  iban
+  handleAccountChange,
+  account,
 }) {
   return [
     <label key="label" className="itemLabel">
@@ -22,8 +21,8 @@ function Account({
           <input
             name="bank"
             type="text"
-            value={bank}
-            onChange={handleInputChange}
+            value={account.bank}
+            onChange={handleAccountChange}
           />
         </Field>
 
@@ -32,8 +31,8 @@ function Account({
           <input
             name="bankCode"
             type="text"
-            value={bankCode}
-            onChange={handleInputChange}
+            value={account.bankCode}
+            onChange={handleAccountChange}
           />
         </Field>
       </Row>
@@ -44,8 +43,8 @@ function Account({
           <input
             name="iban"
             type="text"
-            value={iban}
-            onChange={handleInputChange}
+            value={account.iban}
+            onChange={handleAccountChange}
           />
         </Field>
       </Row>
@@ -56,7 +55,7 @@ function Account({
 
 Account.propTypes = {
   account: PropTypes.object.isRequired,
-  handleInputChange: PropTypes.func.isRequired,
+  handleAccountChange: PropTypes.func.isRequired,
   t: PropTypes.func.isRequired,
 };
 
